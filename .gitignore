@@ -1,4 +1,4 @@
-*.pyc
-utils/*.pyc
-models/*.pyc
-db/*.pyc
+__pycache__/*.pyc
+utils/__pycache__/*.pyc
+models/__pycache__/*.pyc
+db/__pycache__/*.pyc
