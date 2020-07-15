@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from  db.Database import Database
-import sqlite3
 from  utils.Logs import Logs
 
 class CreateTables(Datatables):
@@ -14,10 +13,9 @@ class CreateTables(Datatables):
             self.log.info("Iniciando CREATETABLE ")
             self.connection()
             c = self.conn.cursor()
-            c.execute('''CREATE TABLE IF NOT EXISTS stocks
+            c.executeSQL('''CREATE TABLE IF NOT EXISTS stocks
                 (date_text, trans_text, symbol_text, qty_real, price_real)''')
-            self.conn.commit()
             self.closeConnection()  
-        except sqlite3.Error as e:
+        except Exception as e:
             self.log.error(e.args[0])
             return False
