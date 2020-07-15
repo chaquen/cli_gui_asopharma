@@ -9,3 +9,5 @@ class Logs:
 
     def info(self,msn):
         print("INFO: "+str(self.time)+" : "+msn)
+    def exception(self,msn):
+        print("EXCEPTION: "+str(self.time)+" : "+msn)
