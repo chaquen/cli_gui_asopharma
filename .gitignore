@@ -1,1 +1,4 @@
 *.pyc
+/utils/*.pyc
+/models/*.pyc
+/db/*.pyc
