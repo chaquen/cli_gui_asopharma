@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 import sqlite3
 from  utils.Logs import Logs
-
+from const import constant
 
 class Database:
 
-    namebd = 'example.db'
+    namebd = constant.DB
     user = ''
     port = ''
     password = ''

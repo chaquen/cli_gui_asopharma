@@ -4,7 +4,8 @@
 #from  db.Insert import Insert
 #from  db.Update import Update
 #from  db.Delete import Delete
-from utils.Sync import Sync
+from utils.SyncGet import SyncGet
+from utils.SyncPost import SyncPost
 
 
 #db = Database()
@@ -34,8 +35,11 @@ from utils.Sync import Sync
 
 
 ### API TEST
-sy = Sync()
 endpoint="/traer_productos_por_proveedor/1/1/1"
+sy = SyncGet()
 headers = {'user-agent': 'my-app/0.0.1'}
 payload = {'key1': 'value1', 'key2': 'value2'}
 print(sy.gethttp(endpoint,payload=payload,headers=headers))
+
+sy = SyncPost()
+sy.posthttp(endpoint)
