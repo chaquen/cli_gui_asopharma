@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 import sqlite3
 from  utils.Logs import Logs
-from const import constant
+from const import env
 
 class Database:
 
-    namebd = constant.DB
+    namebd = env.DB
     user = ''
     port = ''
     password = ''

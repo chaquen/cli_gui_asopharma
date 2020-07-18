@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from  utils.Logs import Logs
-from const import constant
+from const import env
 import requests
 import json as json
 import inspect
@@ -19,10 +19,10 @@ class Sync():
         0   : 'Type corrrect endpoint fail "/"'
 
     }
-    _url = constant.URL
+    _url = env.URL
     def __init__(self):
         self.log = Logs() 
-        
+
     def validateUrl(self,endpoint):
         self.log.infoini(inspect.stack()[0][3])
 

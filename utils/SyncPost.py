@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from  utils.Logs import Logs
-from const import constant
 from utils.Sync import Sync
 import requests
 import json as json
