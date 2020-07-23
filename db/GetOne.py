@@ -13,7 +13,7 @@ class GetOne(Database):
     def getOne(self,sql,data):
         try:
             self.log.info("Iniciando consulta getOne "+sql)
-            
+            print(data)
             self.connection()
             c = self.executeSelectSQL(sql,data)
             if c != False:

@@ -21,7 +21,7 @@ class SyncPost(Sync):
             
             response = self.sendRequest(headers,payload)
             
-            #response.raise_for_status()
+            response.raise_for_status()
 
             #return response.json()
         except requests.exceptions.HTTPError as e:
