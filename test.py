@@ -69,12 +69,12 @@ print(response['datos'])
 #sy = SyncPost()
 #print(sy.posthttp(endpoint))
 
-cr = CreateTables()
-fic = open("create.sql", "r")
-lines = []
-for line in fic:
-    cr.createTable(line)
-sy = SyncGet()
+#cr = CreateTables()
+#fic = open("create.sql", "r")
+#lines = []
+#for line in fic:
+#    cr.createTable(line)
+#sy = SyncGet()
 
 #response = sy.gethttp(endpoint)
 #insert = Insert()
@@ -88,8 +88,8 @@ sy = SyncGet()
 
 
 prd = Products()
-#prd.insertProduct(response['datos'])
-p = prd.selectProduct("codigo_producto",value="7707228367085")
-print(p)
-print(prd.codigo_distribuidor)
-print(prd.selectAllProducts())
+prd.insertProducts(response['datos'])
+#p = prd.selectProduct("codigo_producto",value="7707228367085")
+#print(p)
+#print(prd.codigo_distribuidor)
+#print(prd.selectAllProducts())

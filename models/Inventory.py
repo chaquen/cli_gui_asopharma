@@ -6,10 +6,11 @@ from  db.Insert import Insert
 from  db.Update import Update
 from  db.Delete import Delete
 from  utils.Logs import Logs
+from models.Products import Products
 
 class Inventory():
 
-    def __init__(self):
+    def __init__(self,Products):
         self.getall =GetAll()
 
     def getAll(self): 

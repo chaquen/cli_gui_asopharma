@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS stocks (codigo_producto,codigo_distribuidor,nombre_producto,tipo_venta_producto,tipo_presentacion,cantidad_existencias,cantidad_existencias_blister,cantidad_existencias_unidades,cantidad_existencias_caja)

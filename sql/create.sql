@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,nombre_cajero,codigo_cajero,clave,rol)
+CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY AUTOINCREMENT,codigo_producto,codigo_distribuidor,nombre_producto,tipo_venta_producto,tipo_presentacion,cantidad_existencias,cantidad_existencias_blister,cantidad_existencias_unidades,cantidad_existencias_caja)
+CREATE TABLE IF NOT EXISTS inventory (id INTEGER PRIMARY KEY AUTOINCREMENT,fk_id_producto,existencias)
+CREATE TABLE IF NOT EXISTS sales (id INTEGER PRIMARY KEY AUTOINCREMENT,fk_id_producto,tipo_venta,precio_venta,fecha_venta,cajero)

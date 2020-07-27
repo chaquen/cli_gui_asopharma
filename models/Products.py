@@ -7,7 +7,7 @@ from  db.GetOne import GetOne
 from collections import defaultdict
 class Products():
     
-    table = "stocks"
+    table = "products"
     fields = ['codigo_producto',
               'codigo_distribuidor',
               'nombre_producto',
@@ -28,7 +28,7 @@ class Products():
         self.cantidad_existencias_blister = 0
         self.cantidad_existencias_caja = 0
 
-    def insertProduct(self,data):
+    def insertProducts(self,data):
         
         ins = Insert()
         fieldsstr = ",".join(self.fields)
