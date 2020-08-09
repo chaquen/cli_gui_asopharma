@@ -14,10 +14,7 @@ class Update(Database):
             self.log.info("Iniciando UPDATE "+table+" SET "+setupdate + " WHERE "+where+" DATA "+' '.join(map(str,data)) )
             self.connection()
             self.executeSQL("UPDATE "+ table +" SET "+ setupdate +" WHERE  "+ where,data)
-            """c = self.conn.cursor()
-            sql="UPDATE "+ table +" SET "+ setupdate +" WHERE  "+ where
-            c.execute(sql,data)        
-            self.conn.commit()"""
             self.closeConnection()
+            return True
         except Exception as e:
             self.log.error(e.args[0])

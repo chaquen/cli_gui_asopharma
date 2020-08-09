@@ -25,6 +25,7 @@ class HelpWindow(tk.Frame):
         return self.menubar    
 
     def loadDesing(self):
+        '''Función para cargar diseño'''
         label = tk.Label(self, text="This is the HelpWindow", font=self.controller.title_font)
         label.pack(side="top", fill="x", pady=10)
 
@@ -33,6 +34,7 @@ class HelpWindow(tk.Frame):
         button1.pack()
 
     def keyPress(self,event):
+        '''Funcion para capturar eventos dpresionados en el frame'''
         self.log.infoini("key press Help: "+event.keysym)
         if event.keysym == 'F1':
             self.controller.showFrame("HelpWindow")  

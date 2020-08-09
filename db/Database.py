@@ -36,8 +36,10 @@ class Database:
             self.log.info("Iniciando executeSelectSQL ")
             c = self.conn.cursor()
             if data == False: 
+                print("0")
                 c.execute(sql)
             else:
+                print("1")
                 c.execute(sql,data)      
                 
             return c
@@ -69,7 +71,7 @@ class Database:
             c.executemany(sql,data)      
             
             self.conn.commit()
-                
+            self.closeConnection()
             return c
 
         except sqlite3.Error as e:

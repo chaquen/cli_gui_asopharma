@@ -10,7 +10,7 @@ class GetOne(Database):
          self.log = Logs()
 
 
-    def getOne(self,sql,data):
+    def getOne(self,sql,data=False):
         try:
             self.log.info("Iniciando consulta getOne "+sql)
             print(data)

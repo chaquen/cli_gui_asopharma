@@ -16,25 +16,24 @@ class LoginWindow(tk.Frame):
         self.user = Users()
         self.controller = controller
         self.msnWelcome()
-        self.formLogin()
+        self.loadDesign()
         
-        
-    def formLogin(self):
+    def loadDesign(self):
         '''Función para cargar el formulario de login'''
         self.labelUser = tk.Label(self,text="Usuario")
-        self.labelUser.pack()
+        self.labelUser.grid(row=6,column=5,pady=10,padx=250)
         self.entryUser = tk.Entry(self)
-        self.entryUser.pack()
+        self.entryUser.grid(row=7,column=5,pady=10,padx=250)
         self.labelUser = tk.Label(self,text="Contraseña")
-        self.labelUser.pack()
+        self.labelUser.grid(row=8,column=5,pady=10,padx=250)
         self.entryPass = tk.Entry(self,show="*")
-        self.entryPass.pack()
+        self.entryPass.grid(row=9,column=5,pady=10,padx=250)
         
         loginBotton = tk.Button(self,text="Ingresar",
                             background="#93988F",
                             command= self.loginWin
                             )
-        loginBotton.pack()
+        loginBotton.grid(row=10,column=5,pady=10,padx=250)
         
     def msnWelcome(self):
         '''Función para mostrar el mensaje de la página'''
@@ -42,7 +41,7 @@ class LoginWindow(tk.Frame):
                 name = getpass.getuser(),appname = env.APPNAME,
                 fecha = str(datetime.now().day)+"/"+str(datetime.now().month)+"/"+str(datetime.now().year))
         self.labelTitle = tk.Label(self, text=texto)
-        self.labelTitle.pack(side="top", fill="x", pady=150)
+        self.labelTitle.grid(row=5,column=10,pady=10,padx=100)
 
     def menuBar(self,root):
         '''Función para mostrar el menú de la página'''
@@ -50,12 +49,12 @@ class LoginWindow(tk.Frame):
         self.menubar = tk.Menu(root)
         loginMenu = tk.Menu(self.menubar)
         loginMenu.add_command(label="Ayuda (F1)",command=lambda: self.controller.showFrame("HelpWindow"))
+        loginMenu.add_command(label="Config (F12)",command=lambda: self.controller.showFrame("ConfigureWindow"))
         loginMenu.add_command(label="SALIR (Alt + F4)",command=lambda: root.quit())        
         self.menubar.add_cascade(label="Inicio", menu=loginMenu)
 
         return self.menubar
 
-            
     def loginWin(self):
         '''Función para la logica de la página'''
         self.log.infoini("loginwin")
@@ -80,5 +79,7 @@ class LoginWindow(tk.Frame):
         self.log.infoini("key press Login: "+event.keysym)
         if event.keysym == 'F1':
             self.controller.showFrame("HelpWindow")  
+        elif event.keysym == 'F12':
+            self.controller.showFrame("ConfigureWindow")  
         else:
             pass

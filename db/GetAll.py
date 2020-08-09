@@ -9,11 +9,11 @@ class GetAll(Database):
          self.log = Logs()
 
 
-    def getAll(self,sql):
+    def getAll(self,sql,data):
         try:
-            self.log.info("Iniciando consulta getAll")
+            self.log.info("Iniciando consulta getAll "+sql)
             self.connection()
-            c = self.executeSelectSQL(sql)
+            c = self.executeSelectSQL(sql,data)
             data= c.fetchall()
             self.log.info("Consulta realizada getAll "+' '.join(map(str,data)))
             self.closeConnection()

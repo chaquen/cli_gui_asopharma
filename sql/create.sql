@@ -1,4 +1,5 @@
+CREATE TABLE IF NOT EXISTS config(id INTEGER PRIMARY KEY AUTOINCREMENT,fecha_registro_equipo,sede_registrada,mac_equipo)
+CREATE TABLE IF NOT EXISTS config_details(id INTEGER PRIMARY KEY AUTOINCREMENT,fecha_actualiziacion,estado_actualizacion,detalle)
 CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,nombre_cajero,codigo_cajero,clave,rol)
-CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY AUTOINCREMENT,codigo_producto,codigo_distribuidor,nombre_producto,tipo_venta_producto,tipo_presentacion,cantidad_existencias,cantidad_existencias_blister,cantidad_existencias_unidades,cantidad_existencias_caja)
-CREATE TABLE IF NOT EXISTS inventory (id INTEGER PRIMARY KEY AUTOINCREMENT,fk_id_producto,existencias)
-CREATE TABLE IF NOT EXISTS sales (id INTEGER PRIMARY KEY AUTOINCREMENT,fk_id_producto,tipo_venta,precio_venta,fecha_venta,cajero)
+CREATE TABLE IF NOT EXISTS products (id INTEGER,codigo_producto,codigo_distribuidor,nombre_producto,tipo_venta_producto,tipo_presentacion,unidades_por_caja,unidades_por_blister,precio_venta_sede,precio_venta_blister_sede,precio_mayoreo_sede,cantidad_existencias_caja,cantidad_existencias_blister,cantidad_existencias_unidades,cantidad_existencias_totales,minimo_inventario_sede,categoria,proveedor)
+CREATE TABLE IF NOT EXISTS sales (id INTEGER PRIMARY KEY AUTOINCREMENT,fk_id_producto,tipo_venta,cantidad_vendida,precio_venta,fecha_venta,cajero)

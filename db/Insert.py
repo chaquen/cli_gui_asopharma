@@ -17,18 +17,17 @@ class Insert(Database):
             self.executeSQL("INSERT INTO "+table+" VALUES ("+data+")")
             self.conn.commit()
             self.closeConnection()
+            return True
         except Exception as e:
             self.log.error(e.args[0])
+            return False
     
     def insertMany(self,table,fields,values,data):
         try:
             self.log.info("Iniciando INSERT "+table+" ("+fields+") " )
             self.connection()
-            
             sql = "INSERT INTO "+table+" ("+fields+") VALUES ("+values+")"
-            print(data)
-            self.executeMany(sql,data)
-            self.conn.commit()
-            self.closeConnection()
+            return self.executeMany(sql,data) 
+            
         except Exception as e:
             self.log.error(e.args[0])
